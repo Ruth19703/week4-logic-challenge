@@ -1,29 +1,74 @@
+Week 4: JavaScript Logic Challenges
 
-# Week 4 Logic Challenges
+Project Description
 
-## Description
-JavaScript logic challenges solved using Node.js and plain JavaScript.
+This project contains JavaScript logic challenges solved using plain JavaScript and Node.js. The goal is to improve problem-solving skills, logical thinking, and understanding of loops, arrays, variables, and functions.
 
-## Files
-- `round1.js` - Beginner practice examples
-- `round2.js` - Intermediate practice examples
-- `round3.js` - Advanced practice examples
-- `boss.js` - Boss challenge example
+Technologies Used
 
-## Rules Followed
-- Pseudocode comments before each solution
-- At least three console.log tests per function
-- Loops instead of map, filter, or reduce
-- Separate files for each round
+JavaScript
 
-## Challenges Solved
-Replace these examples with the exact challenge names
-from the Workshop 2 notes before submitting.
+Node.js
 
-## Total Points
-Calculate points using the official grading rubric after
-confirming which challenges have been completed.
+Git and GitHub
 
-## Hardest Bug
-Write about the actual bug that took the longest to find,
-what caused it, and how you fixed it.
+Project Structure
+
+week4-logic-challenges/
+├── README.md
+├── round1.js
+├── round2.js
+├── round3.js
+└── boss.js
+
+Challenges Solved
+
+Round 1 — Basic Logic Challenges
+
+Check whether a number is even or odd.
+
+Find the largest number.
+
+Reverse a string.
+
+Count vowels in a string.
+
+Calculate the sum of an array.
+
+Round 2 — Intermediate Logic Challenges
+
+Remove duplicate numbers from an array.
+
+Check whether a word is a palindrome.
+
+Find the second-largest number.
+
+Round 3 — Advanced Logic Challenges
+
+Count positive numbers in an array.
+
+Find the smallest number in an array.
+
+Boss Round — Sum of Numbers
+
+Calculate the sum of all numbers in an array using a loop.
+
+Handle an empty array, returning 0.
+
+Concepts Practiced
+
+const and let
+
+Arrow functions
+
+Arrays and strings
+
+for loops and if statements
+
+Returning values from functions
+
+Testing with console.log()
+
+Handling edge cases
+
+Writing pseudocode before solutions
