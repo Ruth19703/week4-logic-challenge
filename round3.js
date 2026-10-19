@@ -1,86 +1,69 @@
 
 /*
-Challenge 1: Find the most frequent value.
-Pseudocode:
-1. Return null if the array is empty.
-2. For each value, count how often it appears using loops.
-3. Keep the value with the highest count.
-4. Return that value.
-*/
-function mostFrequent(numbers) {
-    if (!Array.isArray(numbers) || numbers.length === 0) {
-        return null;
-    }
+Challenge 1: Count positive numbers
 
-    let answer = numbers[0];
-    let highestCount = 0;
+Pseudocode:
+1. Create a function that receives an array of numbers.
+2. Start a counter at 0.
+3. Loop through every number.
+4. If a number is greater than 0, increase the counter.
+5. Return the counter.
+*/
+
+const countPositive = (numbers) => {
+    let count = 0;
 
     for (let i = 0; i < numbers.length; i++) {
-        let count = 0;
-
-        for (let j = 0; j < numbers.length; j++) {
-            if (numbers[i] === numbers[j]) {
-                count++;
-            }
-        }
-
-        if (count > highestCount) {
-            highestCount = count;
-            answer = numbers[i];
+        if (numbers[i] > 0) {
+            count++;
         }
     }
 
-    return answer;
-}
+    return count;
+};
 
-console.log(mostFrequent([1, 2, 2, 3])); // 2
-console.log(mostFrequent([4, 4, 5, 5])); // 4 (first tied value)
-console.log(mostFrequent([]));           // null
+// Tests
+console.log(countPositive([2, -3, 5, 0, 7])); // 3
+console.log(countPositive([1, 2, 3]));        // 3
+console.log(countPositive([]));               // 0
+
 
 /*
-Challenge 2: Check whether two strings are anagrams.
+Challenge 2: Find the smallest number
+
 Pseudocode:
-1. Convert both strings to lowercase and remove spaces.
-2. If their lengths differ, return false.
-3. For each character in the first string, count its occurrences
-   in both strings using loops.
-4. If any character counts differ, return false.
-5. Otherwise, return true.
+1. Create a function that receives an array of numbers.
+2. If the array is empty, return undefined.
+3. Assume the first number is the smallest.
+4. Loop through the remaining numbers.
+5. If a number is smaller, update the smallest number.
+6. Return the smallest number.
 */
-function areAnagrams(first, second) {
-    if (typeof first !== "string" ||
-        typeof second !== "string") {
-        return false;
+
+const findSmallest = (numbers) => {
+    if (numbers.length === 0) {
+        return undefined;
     }
 
-    first = first.toLowerCase().replace(/\s/g, "");
-    second = second.toLowerCase().replace(/\s/g, "");
+    let smallest = numbers[0];
 
-    if (first.length !== second.length) {
-        return false;
-    }
-
-    for (let i = 0; i < first.length; i++) {
-        let firstCount = 0;
-        let secondCount = 0;
-
-        for (let j = 0; j < first.length; j++) {
-            if (first[i] === first[j]) firstCount++;
-            if (first[i] === second[j]) secondCount++;
-        }
-
-        if (firstCount !== secondCount) {
-            return false;
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] < smallest) {
+            smallest = numbers[i];
         }
     }
 
-    return true;
-}
+    return smallest;
+};
 
-console.log(areAnagrams("listen", "silent")); // true
-console.log(areAnagrams("hello", "world"));   // false
-console.log(areAnagrams("", ""));             // true
+// Tests
+console.log(findSmallest([8, 3, 6, 1, 9])); // 1
+console.log(findSmallest([-5, -2, -10]));   // -10
+console.log(findSmallest([]));              // undefined
 
-// Comparison: Sorting both strings is a compact approach.
-// Counting characters with loops makes the logic visible and
-// follows the workshop's restriction on array methods.
+/*
+Comparison:
+Using a loop is readable because we check each number one by one.
+Sorting the array is another option, but it does extra work when we
+only need the smallest number.
+*/
